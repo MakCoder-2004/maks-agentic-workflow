@@ -4,13 +4,13 @@
 
 Use [the curated installer](install.md), not three full plugin installations or a copy of this source repository's 103-entry audit view:
 
-Run inside the target project:
+Run `gh auth login` once, then run inside the target project:
 
 ```bash
-python -c "import sys,urllib.request; code=urllib.request.urlopen('https://raw.githubusercontent.com/MakCoder-2004/maks-agentic-workflow/main/install.py').read(); exec(code or sys.exit('Download failed'))" --project . --host pi
+python -c "import base64,subprocess; exec(compile(base64.b64decode(subprocess.check_output(['gh','api','repos/MakCoder-2004/maks-agentic-workflow/contents/install.py','--jq','.content'])),'<github-install>','exec'))" --project . --host pi
 ```
 
-Choose `pi`, `codex`, `cursor` or `claude-code`; add `--dry-run` to preview. Python 3.10+ and network access are the only requirements for the public GitHub bootstrap; no clone, credentials or packages are needed. The underlying curated installer remains offline and is also usable from a local checkout.
+Choose `pi`, `codex`, `cursor` or `claude-code`; add `--dry-run` to preview. Python 3.10+, network access and GitHub CLI authorization for this private repository are required. Only you and invited collaborators can access the repository. No permanent clone or packages are needed. The underlying curated installer remains usable from a local checkout.
 
 The selection is **22 entries: 21 original skills plus the combined setup coordinator, with 53 original on-demand helpers**. Helpers live outside host discovery roots and do not contribute another 53 startup skill descriptions. The [selection file](../../workflow/selection.json) records exactly which originals are included. The full archived sources under `upstream/` and legacy `.agents/skills/` view in this repository are source/audit material, **not the target payload**.
 

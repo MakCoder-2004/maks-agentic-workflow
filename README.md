@@ -6,16 +6,18 @@ A focused way to combine **original Matt Pocock, pstack, and Addy Osmani agent s
 
 ## Install into a project
 
-Run this inside the project you want to configure. It downloads the public bootstrap to memory, installs the curated selection into your project, then removes temporary source files.
+The repository is private. Authenticate with GitHub CLI and repository access, then run this inside the project you want to configure. The command retrieves a temporary bootstrap, installs the curated selection, then removes temporary source files.
 
 ```bash
-python -c "import sys,urllib.request; code=urllib.request.urlopen('https://raw.githubusercontent.com/MakCoder-2004/maks-agentic-workflow/main/install.py').read(); exec(code or sys.exit('Download failed'))" --project . --host pi
+gh auth login
+python -c "import base64,subprocess; exec(compile(base64.b64decode(subprocess.check_output(['gh','api','repos/MakCoder-2004/maks-agentic-workflow/contents/install.py','--jq','.content'])),'<github-install>','exec'))" --project . --host pi
 ```
 
-Choose `pi`, `codex`, `cursor`, or `claude-code`. Python 3.10+ and network access are required. No clone, GitHub login, package manager, or global install is needed. Preview with `--dry-run`:
+Choose `pi`, `codex`, `cursor`, or `claude-code`. Python 3.10+, GitHub CLI access, and network access are required. No permanent clone, package manager, or global install is needed. Only you and invited collaborators can access the private repository and its issues. Preview with `--dry-run`:
 
 ```bash
-python -c "import sys,urllib.request; code=urllib.request.urlopen('https://raw.githubusercontent.com/MakCoder-2004/maks-agentic-workflow/main/install.py').read(); exec(code or sys.exit('Download failed'))" --project . --host pi --dry-run
+gh auth login
+python -c "import base64,subprocess; exec(compile(base64.b64decode(subprocess.check_output(['gh','api','repos/MakCoder-2004/maks-agentic-workflow/contents/install.py','--jq','.content'])),'<github-install>','exec'))" --project . --host pi --dry-run
 ```
 
 The installer exposes **22 entries**: 21 original skills and the combined setup skill. Another **53 selected original helpers** remain outside skill discovery and load only when needed. It does not install the full Matt, pstack, or Addy catalogs. See the [install guide](docs/guide/install.md) for files, updates, safety behavior, and host limits.
@@ -151,7 +153,7 @@ This repository has two different views. **Do not copy the source archive into c
 | `upstream/` | Pinned source snapshots, licenses, and full source material for comparison and provenance |
 | `workflow/selection.json` | Exact filtered list of entry skills and private helpers |
 | `workflow/skills/setup-agentic-workflow/` | The one user-requested coordinator plus original Matt/pstack setup instructions as non-skill references |
-| `scripts/install.py` and `install.py` | Curated project installer and public GitHub bootstrap |
+| `scripts/install.py` and `install.py` | Curated project installer and authenticated private GitHub bootstrap |
 | `.maks-agentic-workflow/` in an installed project | Only the selected originals, required resources, registry, and usage guide |
 | `sources.lock.json` and `upstream/checksums.json` | Pinned provenance and integrity checks for original upstream content |
 | `docs/guide/` | Full workflow and scenario instructions |
@@ -170,9 +172,9 @@ This checks package integrity, filtered selection, installation and documented s
 
 ## Contribute
 
-Issues and pull requests are welcome. Changes to `main` must go through a pull request. The repository owner reviews and merges contributions; direct pushes and contributor merges are disabled by the `main` ruleset.
+The repository is private. Issues and pull requests are available to you and invited collaborators. Changes to `main` must go through a pull request. The owner reviews and merges contributions; collaborator pushes and merges to `main` are blocked by the `main` ruleset. Merge commits and rebase-merges preserve contributors' individual commits, so GitHub can credit each contributor. Squash merging is disabled.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the fork, test, and review process.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for access, test, review, and contributor-credit details.
 
 ## Attribution
 

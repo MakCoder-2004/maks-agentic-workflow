@@ -17,4 +17,4 @@ Source symlinks are recorded rather than instantiated for Windows portability: M
 
 The frontend-design and ui-ux-pro-max skills are not redistributed in this collection. They remain explicit external dependencies with their own provenance, versions and license terms.
 
-Upstream license grants apply to their material. No single blanket copyright claim is made over third-party content. The repository is public at the user's explicit request. Publishing this collection does not authorize deployment, PR publication or other operations in projects that install it.
+Upstream license grants apply to their material. No single blanket copyright claim is made over third-party content. The repository is private at the user's explicit request to restrict access to prior commits. Only the owner and invited collaborators can access its history or content.

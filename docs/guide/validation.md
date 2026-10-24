@@ -34,11 +34,19 @@ The consuming-project command is now `python scripts/install.py --project <proje
 
 The full regression passed **49 tests**, followed by **3 targeted final checks** including the added filesystem-boundary test. A real read-only Pi run successfully loaded original grill-with-docs and its grilling/domain-modeling helpers from the private canonical tree, with zero tool errors and unchanged installed checksums. [Detailed installer evidence and limits](../../validation/compact-installer.md).
 
-## Public GitHub bootstrap
+## Repository access and contribution rules
 
-The repository is now public at the user's request. The [root bootstrap](../../install.py) supports the direct GitHub URL command in [installation instructions](install.md), using only Python and a temporary download, with no permanent clone or GitHub credentials. It delegates to the same curated installer and preserves caller-relative target paths.
+The repository is private. Issues, commit history and project content are available only to the owner and invited collaborators. The current `main` is a single root commit. An anonymous GitHub API request to a previous commit SHA returned 404 after the visibility change; GitHub cannot make only selected commits private inside a public repository.
 
-The latest full regression passed **63 tests**, including public-download failure handling, archive traversal/link/size checks, cleanup, argument/CWD forwarding and refusal to install into another source/archive checkout. Unit network responses are mocked; the published URL is smoke-tested after the first main push. Downloading temporary source does not install all three catalogs into the project.
+The active `main-owner-review-only` ruleset requires PRs, a code-owner approval, current review of the latest push, resolved review threads, and allows only the repository-admin role to update `main` through a PR-only bypass. The owner is the only current collaborator/admin. Issues remain enabled for authorized collaborators. [Contribution rules](../../CONTRIBUTING.md).
+
+Merge and rebase methods are enabled, and squash is disabled. Merge/rebase retain individual contributor commits on `main`; GitHub credits a contributor when the commit author email links to that account. The owner reviews and merges contributed PRs.
+
+## Private GitHub bootstrap
+
+The [root bootstrap](../../install.py) uses authenticated GitHub CLI access to fetch temporary source, then invokes the same curated installer. See [installation instructions](install.md) for the command. It preserves caller-relative target paths and does not keep a permanent clone.
+
+The bootstrap is covered by tests for authentication failures, archive traversal/link/size checks, cleanup, argument/CWD forwarding and refusal to install into another source/archive checkout. Downloading temporary source does not install all three catalogs into the project.
 
 ## Unified setup update
 
