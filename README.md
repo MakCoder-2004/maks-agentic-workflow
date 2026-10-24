@@ -4,6 +4,8 @@ A curated set of existing engineering skills with a clear handoff between planni
 
 The repository is public. Anyone can read it, open an issue, or submit a pull request; only the owner can merge to `main`.
 
+![Maks Agentic Workflow architecture: Matt plans and creates tickets, pstack builds and tests, Addy supplies cross-cutting checks, and release and maintenance feed back into planning.](docs/images/workflow-architecture.png)
+
 ## Get started
 
 You need Python 3.10+ and network access. No GitHub login or GitHub CLI is required.
@@ -31,18 +33,6 @@ You need Python 3.10+ and network access. No GitHub login or GitHub CLI is requi
 For flags, updates, and host-specific limitations, see the [installation guide](docs/guide/install.md) and [setup guide](docs/guide/setup.md).
 
 ## Who does what
-
-```text
-Matt:   research / grill / design -> approved spec -> dependency-aware tickets
-                                                      |
-                                                      v
-pstack:                         poteto-mode -> one ticket -> test -> next ticket -> PR
-                                                      ^          |
-Addy:                    relevant constraints, security, runtime and review checks
-
-After the PR: Addy covers CI/CD, migrations, observability and release readiness.
-Issues and maintenance findings can feed back into Matt's planning flow.
-```
 
 **Matt owns the specification.** `grill-with-docs` brings together requirements and domain vocabulary; `to-spec` writes the agreed behavior; `to-tickets` breaks it into verifiable work with real blockers. Design and prototypes are used when uncertainty warrants them, not for every small change.
 
