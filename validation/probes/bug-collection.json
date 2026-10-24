@@ -1,0 +1,13 @@
+{
+  "case": "bug",
+  "mode": "collection",
+  "provider": "openai-codex",
+  "model": "gpt-6-luna",
+  "thinking": "high",
+  "tools": [
+    "read"
+  ],
+  "exit_code": 0,
+  "prompt": "This is a bounded read-only workflow probe. Only read files inside the current repository if needed; do not inspect credentials or user-home files. Do not claim tests, other models, deployment or code changes happened. Return at most 250 words under Ownership, Next steps, Gates, Evidence limits. The user request, including its named ownership preference, is the same for the paired baseline.\n\nAn existing project has an approved bug ticket: cached records remain stale after expiration. We have not supplied the application source or a reproduction here. Using the combined original-skill workflow, explain the execution owner and per-ticket test/check loop. This probe authorizes explanation only, not edits, publication or deployment. Do not invent the root cause or claim tests ran.",
+  "stderr": ""
+}

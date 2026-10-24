@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "name": "matt-poteto-addy",
+  "description": "Matt plans/specifies/tickets; original poteto-mode implements/tests/prepares PRs; selected Addy skills cover lifecycle disciplines.",
+  "entry_points": {
+    "workflow": [
+      "setup-agentic-workflow"
+    ],
+    "matt": [
+      "research",
+      "grill-with-docs",
+      "codebase-design",
+      "prototype",
+      "to-spec",
+      "to-tickets",
+      "triage",
+      "handoff"
+    ],
+    "pstack": [
+      "poteto-mode"
+    ],
+    "addy": [
+      "constraint-driven-development",
+      "api-and-interface-design",
+      "test-driven-development",
+      "browser-testing-with-devtools",
+      "security-and-hardening",
+      "code-review-and-quality",
+      "performance-optimization",
+      "ci-cd-and-automation",
+      "observability-and-instrumentation",
+      "deprecation-and-migration",
+      "shipping-and-launch",
+      "documentation-and-adrs"
+    ]
+  },
+  "on_demand": {
+    "matt": [
+      "grilling",
+      "domain-modeling",
+      "wayfinder",
+      "retro",
+      "improve-codebase-architecture",
+      "diagnosing-bugs"
+    ],
+    "pstack": [
+      "how",
+      "why",
+      "architect",
+      "arena",
+      "swarm",
+      "interrogate",
+      "unslop",
+      "technical-writing",
+      "no-comments",
+      "tdd",
+      "benchmark-checklist",
+      "show-me-your-work",
+      "blast-radius",
+      "correct",
+      "figure-it-out"
+    ],
+    "addy": [
+      "context-engineering",
+      "spec-driven-development",
+      "source-driven-development",
+      "debugging-and-error-recovery",
+      "frontend-ui-engineering"
+    ],
+    "cursor-team-kit": [
+      "control-cli",
+      "control-ui",
+      "deslop"
+    ]
+  },
+  "include_pstack_principles": true,
+  "rationale": {
+    "entry_points": "Use setup-agentic-workflow only. Standalone Matt/pstack setup skills are removed; their required instructions/templates are non-skill references bundled with the coordinator.",
+    "on_demand": "Original helper bodies/resources are present for the documented planning, architecture, execution/review and maintenance paths, but are outside host skill-discovery directories.",
+    "principles": "Poteto-mode explicitly requires its 24 original principle leaf files. Keep them available without adding 24 discovery descriptions.",
+    "resources": "Preserve skill-local resources, Addy's root-shared references, original pstack agent roles and its documented Claude tool adapter. Do not ship whole package archives, plugin catalogs, hooks, automations, demos or unrelated productivity/bot/formal-verification skills.",
+    "ui": "frontend-design and ui-ux-pro-max remain checked external dependencies, as previously agreed; no silent download, substitution or rebranding."
+  }
+}

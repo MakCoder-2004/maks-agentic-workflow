@@ -1,0 +1,13 @@
+{
+  "case": "feature",
+  "mode": "baseline",
+  "provider": "openai-codex",
+  "model": "gpt-6-luna",
+  "thinking": "high",
+  "tools": [
+    "read"
+  ],
+  "exit_code": 0,
+  "prompt": "This is a bounded read-only workflow probe. Only read files inside the current repository if needed; do not inspect credentials or user-home files. Do not claim tests, other models, deployment or code changes happened. Return at most 250 words under Ownership, Next steps, Gates, Evidence limits. The user request, including its named ownership preference, is the same for the paired baseline.\n\nI want to build a new internal request-tracking feature, but the users, workflow and acceptance criteria are still vague. We use Matt for planning/specs/tickets, poteto-mode for implementation/testing/PRs, and Addy for lifecycle coverage. This request is planning only. Explain which actual skills to use next, what you need to ask me, and how the eventual implementation handoff will work. Do not implement anything or invent a new skill.",
+  "stderr": ""
+}

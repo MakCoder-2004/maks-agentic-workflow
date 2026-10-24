@@ -1,0 +1,723 @@
+{
+  "format": 1,
+  "policy": "Original regular-file bytes from pinned Git archives. No skill names, metadata, bodies, scripts or references rewritten. Source symlinks are recorded, not materialized. Active skills are byte-identical copies with a provenance map.",
+  "sources": [
+    {
+      "id": "matt",
+      "repository": "https://github.com/mattpocock/skills",
+      "revision": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+      "subdirectory": ".",
+      "local_path": "upstream/matt",
+      "omitted_symlinks": [
+        {
+          "path": "AGENTS.md",
+          "target": "CLAUDE.md"
+        }
+      ],
+      "files": 190
+    },
+    {
+      "id": "pstack",
+      "repository": "https://github.com/cursor/plugins",
+      "revision": "9580c23696ac8d7abed0c166f2f9918800afb819",
+      "subdirectory": "pstack",
+      "local_path": "upstream/pstack",
+      "omitted_symlinks": [],
+      "files": 200
+    },
+    {
+      "id": "pstack-claude-code",
+      "repository": "https://github.com/cursor/plugins",
+      "revision": "9580c23696ac8d7abed0c166f2f9918800afb819",
+      "subdirectory": "harness/pstack/claude-code",
+      "local_path": "upstream/pstack-claude-code",
+      "omitted_symlinks": [],
+      "files": 186
+    },
+    {
+      "id": "addy",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+      "subdirectory": ".",
+      "local_path": "upstream/addy",
+      "omitted_symlinks": [
+        {
+          "path": ".opencode/skills",
+          "target": "../skills/"
+        }
+      ],
+      "files": 216
+    },
+    {
+      "id": "cursor-team-kit",
+      "repository": "https://github.com/cursor/plugins",
+      "revision": "9580c23696ac8d7abed0c166f2f9918800afb819",
+      "subdirectory": "cursor-team-kit",
+      "local_path": "upstream/cursor-team-kit",
+      "omitted_symlinks": [],
+      "files": 29
+    }
+  ],
+  "active_skills": [
+    {
+      "name": "code-review",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/code-review",
+      "installed_path": ".agents/skills/code-review"
+    },
+    {
+      "name": "codebase-design",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/codebase-design",
+      "installed_path": ".agents/skills/codebase-design"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/diagnosing-bugs",
+      "installed_path": ".agents/skills/diagnosing-bugs"
+    },
+    {
+      "name": "domain-modeling",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/domain-modeling",
+      "installed_path": ".agents/skills/domain-modeling"
+    },
+    {
+      "name": "grill-with-docs",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/grill-with-docs",
+      "installed_path": ".agents/skills/grill-with-docs"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/improve-codebase-architecture",
+      "installed_path": ".agents/skills/improve-codebase-architecture"
+    },
+    {
+      "name": "pr",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/pr",
+      "installed_path": ".agents/skills/pr"
+    },
+    {
+      "name": "prototype",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/prototype",
+      "installed_path": ".agents/skills/prototype"
+    },
+    {
+      "name": "research",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/research",
+      "installed_path": ".agents/skills/research"
+    },
+    {
+      "name": "retro",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/retro",
+      "installed_path": ".agents/skills/retro"
+    },
+    {
+      "name": "to-spec",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/to-spec",
+      "installed_path": ".agents/skills/to-spec"
+    },
+    {
+      "name": "to-tickets",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/to-tickets",
+      "installed_path": ".agents/skills/to-tickets"
+    },
+    {
+      "name": "triage",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/triage",
+      "installed_path": ".agents/skills/triage"
+    },
+    {
+      "name": "wayfinder",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/wayfinder",
+      "installed_path": ".agents/skills/wayfinder"
+    },
+    {
+      "name": "wizard",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/engineering/wizard",
+      "installed_path": ".agents/skills/wizard"
+    },
+    {
+      "name": "grill-me",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/productivity/grill-me",
+      "installed_path": ".agents/skills/grill-me"
+    },
+    {
+      "name": "grilling",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/productivity/grilling",
+      "installed_path": ".agents/skills/grilling"
+    },
+    {
+      "name": "handoff",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/productivity/handoff",
+      "installed_path": ".agents/skills/handoff"
+    },
+    {
+      "name": "to-questionnaire",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/productivity/to-questionnaire",
+      "installed_path": ".agents/skills/to-questionnaire"
+    },
+    {
+      "name": "wait-what",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/productivity/wait-what",
+      "installed_path": ".agents/skills/wait-what"
+    },
+    {
+      "name": "writing-for-agents",
+      "source": "matt",
+      "original_path": "upstream/matt/skills/productivity/writing-for-agents",
+      "installed_path": ".agents/skills/writing-for-agents"
+    },
+    {
+      "name": "architect",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/architect",
+      "installed_path": ".agents/skills/architect"
+    },
+    {
+      "name": "arena",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/arena",
+      "installed_path": ".agents/skills/arena"
+    },
+    {
+      "name": "automate-me",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/automate-me",
+      "installed_path": ".agents/skills/automate-me"
+    },
+    {
+      "name": "benchmark-checklist",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/benchmark-checklist",
+      "installed_path": ".agents/skills/benchmark-checklist"
+    },
+    {
+      "name": "blast-radius",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/blast-radius",
+      "installed_path": ".agents/skills/blast-radius"
+    },
+    {
+      "name": "bro",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/bro",
+      "installed_path": ".agents/skills/bro"
+    },
+    {
+      "name": "correct",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/correct",
+      "installed_path": ".agents/skills/correct"
+    },
+    {
+      "name": "create-formal-verification-skill",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/create-formal-verification-skill",
+      "installed_path": ".agents/skills/create-formal-verification-skill"
+    },
+    {
+      "name": "create-verification-skill",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/create-verification-skill",
+      "installed_path": ".agents/skills/create-verification-skill"
+    },
+    {
+      "name": "figure-it-out",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/figure-it-out",
+      "installed_path": ".agents/skills/figure-it-out"
+    },
+    {
+      "name": "how",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/how",
+      "installed_path": ".agents/skills/how"
+    },
+    {
+      "name": "in-your-own-words",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/in-your-own-words",
+      "installed_path": ".agents/skills/in-your-own-words"
+    },
+    {
+      "name": "interrogate",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/interrogate",
+      "installed_path": ".agents/skills/interrogate"
+    },
+    {
+      "name": "ketchup",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/ketchup",
+      "installed_path": ".agents/skills/ketchup"
+    },
+    {
+      "name": "ketchup-video",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/ketchup-video",
+      "installed_path": ".agents/skills/ketchup-video"
+    },
+    {
+      "name": "maintain-formal-verification-skill",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/maintain-formal-verification-skill",
+      "installed_path": ".agents/skills/maintain-formal-verification-skill"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/maintain-verification-skill",
+      "installed_path": ".agents/skills/maintain-verification-skill"
+    },
+    {
+      "name": "make-bot-ui",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/make-bot-ui",
+      "installed_path": ".agents/skills/make-bot-ui"
+    },
+    {
+      "name": "no-comments",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/no-comments",
+      "installed_path": ".agents/skills/no-comments"
+    },
+    {
+      "name": "poteto-help",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/poteto-help",
+      "installed_path": ".agents/skills/poteto-help"
+    },
+    {
+      "name": "poteto-mode",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/poteto-mode",
+      "installed_path": ".agents/skills/poteto-mode"
+    },
+    {
+      "name": "principle-attack-the-premise",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-attack-the-premise",
+      "installed_path": ".agents/skills/principle-attack-the-premise"
+    },
+    {
+      "name": "principle-boundary-discipline",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-boundary-discipline",
+      "installed_path": ".agents/skills/principle-boundary-discipline"
+    },
+    {
+      "name": "principle-build-the-lever",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-build-the-lever",
+      "installed_path": ".agents/skills/principle-build-the-lever"
+    },
+    {
+      "name": "principle-encode-lessons-in-structure",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-encode-lessons-in-structure",
+      "installed_path": ".agents/skills/principle-encode-lessons-in-structure"
+    },
+    {
+      "name": "principle-exhaust-the-design-space",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-exhaust-the-design-space",
+      "installed_path": ".agents/skills/principle-exhaust-the-design-space"
+    },
+    {
+      "name": "principle-experience-first",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-experience-first",
+      "installed_path": ".agents/skills/principle-experience-first"
+    },
+    {
+      "name": "principle-explain-the-number",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-explain-the-number",
+      "installed_path": ".agents/skills/principle-explain-the-number"
+    },
+    {
+      "name": "principle-fix-root-causes",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-fix-root-causes",
+      "installed_path": ".agents/skills/principle-fix-root-causes"
+    },
+    {
+      "name": "principle-foundational-thinking",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-foundational-thinking",
+      "installed_path": ".agents/skills/principle-foundational-thinking"
+    },
+    {
+      "name": "principle-guard-the-context-window",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-guard-the-context-window",
+      "installed_path": ".agents/skills/principle-guard-the-context-window"
+    },
+    {
+      "name": "principle-laziness-protocol",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-laziness-protocol",
+      "installed_path": ".agents/skills/principle-laziness-protocol"
+    },
+    {
+      "name": "principle-make-operations-idempotent",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-make-operations-idempotent",
+      "installed_path": ".agents/skills/principle-make-operations-idempotent"
+    },
+    {
+      "name": "principle-migrate-callers-then-delete-legacy-apis",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-migrate-callers-then-delete-legacy-apis",
+      "installed_path": ".agents/skills/principle-migrate-callers-then-delete-legacy-apis"
+    },
+    {
+      "name": "principle-minimize-reader-load",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-minimize-reader-load",
+      "installed_path": ".agents/skills/principle-minimize-reader-load"
+    },
+    {
+      "name": "principle-model-the-domain",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-model-the-domain",
+      "installed_path": ".agents/skills/principle-model-the-domain"
+    },
+    {
+      "name": "principle-never-block-on-the-human",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-never-block-on-the-human",
+      "installed_path": ".agents/skills/principle-never-block-on-the-human"
+    },
+    {
+      "name": "principle-outcome-oriented-execution",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-outcome-oriented-execution",
+      "installed_path": ".agents/skills/principle-outcome-oriented-execution"
+    },
+    {
+      "name": "principle-prove-it-works",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-prove-it-works",
+      "installed_path": ".agents/skills/principle-prove-it-works"
+    },
+    {
+      "name": "principle-redesign-from-first-principles",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-redesign-from-first-principles",
+      "installed_path": ".agents/skills/principle-redesign-from-first-principles"
+    },
+    {
+      "name": "principle-separate-before-serializing-shared-state",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-separate-before-serializing-shared-state",
+      "installed_path": ".agents/skills/principle-separate-before-serializing-shared-state"
+    },
+    {
+      "name": "principle-sequence-verifiable-units",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-sequence-verifiable-units",
+      "installed_path": ".agents/skills/principle-sequence-verifiable-units"
+    },
+    {
+      "name": "principle-subtract-before-you-add",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-subtract-before-you-add",
+      "installed_path": ".agents/skills/principle-subtract-before-you-add"
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-test-behavior-not-implementation",
+      "installed_path": ".agents/skills/principle-test-behavior-not-implementation"
+    },
+    {
+      "name": "principle-type-system-discipline",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/principle-type-system-discipline",
+      "installed_path": ".agents/skills/principle-type-system-discipline"
+    },
+    {
+      "name": "recall",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/recall",
+      "installed_path": ".agents/skills/recall"
+    },
+    {
+      "name": "reflect",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/reflect",
+      "installed_path": ".agents/skills/reflect"
+    },
+    {
+      "name": "sharpen",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/sharpen",
+      "installed_path": ".agents/skills/sharpen"
+    },
+    {
+      "name": "show-me-your-work",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/show-me-your-work",
+      "installed_path": ".agents/skills/show-me-your-work"
+    },
+    {
+      "name": "statechart",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/statechart",
+      "installed_path": ".agents/skills/statechart"
+    },
+    {
+      "name": "swarm",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/swarm",
+      "installed_path": ".agents/skills/swarm"
+    },
+    {
+      "name": "tdd",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/tdd",
+      "installed_path": ".agents/skills/tdd"
+    },
+    {
+      "name": "teach",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/teach",
+      "installed_path": ".agents/skills/teach"
+    },
+    {
+      "name": "technical-writing",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/technical-writing",
+      "installed_path": ".agents/skills/technical-writing"
+    },
+    {
+      "name": "typescript-best-practices",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/typescript-best-practices",
+      "installed_path": ".agents/skills/typescript-best-practices"
+    },
+    {
+      "name": "unslop",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/unslop",
+      "installed_path": ".agents/skills/unslop"
+    },
+    {
+      "name": "why",
+      "source": "pstack",
+      "original_path": "upstream/pstack/skills/why",
+      "installed_path": ".agents/skills/why"
+    },
+    {
+      "name": "api-and-interface-design",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/api-and-interface-design",
+      "installed_path": ".agents/skills/api-and-interface-design"
+    },
+    {
+      "name": "browser-testing-with-devtools",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/browser-testing-with-devtools",
+      "installed_path": ".agents/skills/browser-testing-with-devtools"
+    },
+    {
+      "name": "ci-cd-and-automation",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/ci-cd-and-automation",
+      "installed_path": ".agents/skills/ci-cd-and-automation"
+    },
+    {
+      "name": "code-review-and-quality",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/code-review-and-quality",
+      "installed_path": ".agents/skills/code-review-and-quality"
+    },
+    {
+      "name": "code-simplification",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/code-simplification",
+      "installed_path": ".agents/skills/code-simplification"
+    },
+    {
+      "name": "constraint-driven-development",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/constraint-driven-development",
+      "installed_path": ".agents/skills/constraint-driven-development"
+    },
+    {
+      "name": "context-engineering",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/context-engineering",
+      "installed_path": ".agents/skills/context-engineering"
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/debugging-and-error-recovery",
+      "installed_path": ".agents/skills/debugging-and-error-recovery"
+    },
+    {
+      "name": "deprecation-and-migration",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/deprecation-and-migration",
+      "installed_path": ".agents/skills/deprecation-and-migration"
+    },
+    {
+      "name": "documentation-and-adrs",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/documentation-and-adrs",
+      "installed_path": ".agents/skills/documentation-and-adrs"
+    },
+    {
+      "name": "doubt-driven-development",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/doubt-driven-development",
+      "installed_path": ".agents/skills/doubt-driven-development"
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/frontend-ui-engineering",
+      "installed_path": ".agents/skills/frontend-ui-engineering"
+    },
+    {
+      "name": "git-workflow-and-versioning",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/git-workflow-and-versioning",
+      "installed_path": ".agents/skills/git-workflow-and-versioning"
+    },
+    {
+      "name": "idea-refine",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/idea-refine",
+      "installed_path": ".agents/skills/idea-refine"
+    },
+    {
+      "name": "interview-me",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/interview-me",
+      "installed_path": ".agents/skills/interview-me"
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/observability-and-instrumentation",
+      "installed_path": ".agents/skills/observability-and-instrumentation"
+    },
+    {
+      "name": "performance-optimization",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/performance-optimization",
+      "installed_path": ".agents/skills/performance-optimization"
+    },
+    {
+      "name": "security-and-hardening",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/security-and-hardening",
+      "installed_path": ".agents/skills/security-and-hardening"
+    },
+    {
+      "name": "shipping-and-launch",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/shipping-and-launch",
+      "installed_path": ".agents/skills/shipping-and-launch"
+    },
+    {
+      "name": "source-driven-development",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/source-driven-development",
+      "installed_path": ".agents/skills/source-driven-development"
+    },
+    {
+      "name": "spec-driven-development",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/spec-driven-development",
+      "installed_path": ".agents/skills/spec-driven-development"
+    },
+    {
+      "name": "test-driven-development",
+      "source": "addy",
+      "original_path": "upstream/addy/skills/test-driven-development",
+      "installed_path": ".agents/skills/test-driven-development"
+    },
+    {
+      "name": "control-cli",
+      "source": "cursor-team-kit",
+      "original_path": "upstream/cursor-team-kit/skills/control-cli",
+      "installed_path": ".agents/skills/control-cli"
+    },
+    {
+      "name": "control-ui",
+      "source": "cursor-team-kit",
+      "original_path": "upstream/cursor-team-kit/skills/control-ui",
+      "installed_path": ".agents/skills/control-ui"
+    },
+    {
+      "name": "deslop",
+      "source": "cursor-team-kit",
+      "original_path": "upstream/cursor-team-kit/skills/deslop",
+      "installed_path": ".agents/skills/deslop"
+    }
+  ],
+  "active_resources": [
+    {
+      "original_path": "upstream/addy/references",
+      "installed_path": ".agents/references",
+      "reason": "Preserve original ../../references links from Addy skills"
+    }
+  ],
+  "active_counts": {
+    "matt": 21,
+    "pstack": 57,
+    "addy": 22,
+    "cursor-team-kit": 3
+  },
+  "executable_files": [
+    ".agents/skills/idea-refine/scripts/idea-refine.sh",
+    ".agents/skills/poteto-mode/scripts/check-plan.mjs",
+    ".agents/skills/poteto-mode/scripts/orch/orch.ts",
+    ".agents/skills/poteto-mode/scripts/watch-pr/watch-pr",
+    ".agents/skills/poteto-mode/scripts/worktree-audit.sh",
+    ".agents/skills/show-me-your-work/scripts/log.sh",
+    "upstream/addy/hooks/sdd-cache-post.sh",
+    "upstream/addy/hooks/sdd-cache-pre.sh",
+    "upstream/addy/hooks/sdd-cache-test.sh",
+    "upstream/addy/hooks/session-start-test.sh",
+    "upstream/addy/hooks/session-start.sh",
+    "upstream/addy/hooks/simplify-ignore-test.sh",
+    "upstream/addy/hooks/simplify-ignore.sh",
+    "upstream/addy/skills/idea-refine/scripts/idea-refine.sh",
+    "upstream/matt/scripts/link-skills.sh",
+    "upstream/matt/scripts/list-skills.sh",
+    "upstream/matt/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+    "upstream/pstack-claude-code/skills/poteto-mode/scripts/check-plan.mjs",
+    "upstream/pstack-claude-code/skills/poteto-mode/scripts/orch/orch.ts",
+    "upstream/pstack-claude-code/skills/poteto-mode/scripts/watch-pr/watch-pr",
+    "upstream/pstack-claude-code/skills/poteto-mode/scripts/worktree-audit.sh",
+    "upstream/pstack-claude-code/skills/show-me-your-work/scripts/log.sh",
+    "upstream/pstack/skills/poteto-mode/scripts/check-plan.mjs",
+    "upstream/pstack/skills/poteto-mode/scripts/orch/orch.ts",
+    "upstream/pstack/skills/poteto-mode/scripts/watch-pr/watch-pr",
+    "upstream/pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+    "upstream/pstack/skills/show-me-your-work/scripts/log.sh"
+  ]
+}

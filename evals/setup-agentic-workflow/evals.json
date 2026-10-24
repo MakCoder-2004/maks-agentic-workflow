@@ -1,0 +1,19 @@
+{
+  "skill_name": "setup-agentic-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "name": "new-project-with-existing-claude-file",
+      "prompt": "Configure the combined workflow in this fixture project. AGENTS.md is missing but CLAUDE.md already exists. Approved plan: local Markdown tracker, default triage vocabulary, single-context glossary/ADR docs, floor-only written CONSTRAINTS.md with enforcement pending, preserve existing pstack settings and mark missing native capabilities pending. Create/update only project documentation and instructions; preserve existing user text and installer markers. Do not install tools, edit globals, run commands, generate application code/specs or publish anything. These project-document changes are already approved; do not restart three interviews.",
+      "expected_output": "Create canonical AGENTS.md despite existing CLAUDE.md; configure Matt docs and Addy written constraints; preserve user instructions and installed originals; leave global model rules unchanged and report pstack/enforcement limitations truthfully.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "existing-agents-preservation",
+      "prompt": "Configure the combined workflow in this fixture project using the approved local Markdown tracker, default triage vocabulary and single-context domain docs. AGENTS.md contains custom user rules that must remain intact. Use floor-only written constraints with enforcement pending. Keep current model settings, and report unsupported native capabilities as pending. Only local documentation edits are approved; no global changes, tools, commands, code/spec generation or external operations. Reuse the supplied choices rather than repeating three setup interviews.",
+      "expected_output": "Preserve the existing AGENTS.md rules and managed block, add one setup section without duplicates, configure local docs/constraints, preserve globals/original skill files and state unresolved capabilities rather than falsely declaring all components ready.",
+      "files": []
+    }
+  ]
+}

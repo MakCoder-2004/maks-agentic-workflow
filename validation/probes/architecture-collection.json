@@ -1,0 +1,13 @@
+{
+  "case": "architecture",
+  "mode": "collection",
+  "provider": "openai-codex",
+  "model": "gpt-6-luna",
+  "thinking": "high",
+  "tools": [
+    "read"
+  ],
+  "exit_code": 0,
+  "prompt": "This is a bounded read-only workflow probe. Only read files inside the current repository if needed; do not inspect credentials or user-home files. Do not claim tests, other models, deployment or code changes happened. Return at most 250 words under Ownership, Next steps, Gates, Evidence limits. The user request, including its named ownership preference, is the same for the paired baseline.\n\nThis is a read-only architecture/documentation request for the current collection. Explain the actual Matt -> poteto-mode handoff and where Addy skills apply, using source/docs as needed. Do not restructure application code or change skill content. Distinguish what original packages provide from host runtime capabilities that are not proved.",
+  "stderr": ""
+}

@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+# Preserve exact original bytes in the discovery view and source snapshots.
+.agents/** -text
+upstream/** -text
+workflow/skills/setup-agentic-workflow/references/** -text

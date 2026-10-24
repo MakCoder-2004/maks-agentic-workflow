@@ -1,0 +1,6 @@
+interface:
+  display_name: "Set up the combined workflow"
+  short_description: "Configure Matt, pstack, Addy and AGENTS.md once."
+  default_prompt: "Use $setup-agentic-workflow to configure this project."
+policy:
+  allow_implicit_invocation: false
