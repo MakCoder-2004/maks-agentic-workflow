@@ -1,4 +1,4 @@
-"""Public GitHub bootstrap tests; no network or real project mutation."""
+"""Private GitHub bootstrap tests; no network or real project mutation."""
 from contextlib import redirect_stderr
 import importlib.util
 import io
@@ -122,19 +122,22 @@ class GitHubBootstrapTests(unittest.TestCase):
         self.assertFalse(delegated[0].exists())
         self.assertEqual(Path.cwd(), caller)
 
-    def test_public_download_uses_no_credentials_and_is_size_bounded(self):
+    def test_private_download_uses_authenticated_github_cli_and_is_size_bounded(self):
         data = archive_bytes()
-        response = io.BytesIO(data)
-        with patch.object(bootstrap, 'urlopen', return_value=response) as open_url:
+        with patch.object(bootstrap.shutil, 'which', return_value='gh'), patch.object(bootstrap.subprocess, 'run', return_value=subprocess.CompletedProcess(['gh'], 0, data, b'')) as run:
             self.assertEqual(bootstrap.download_source(), data)
-        request = open_url.call_args.args[0]
-        self.assertEqual(request.full_url, 'https://codeload.github.com/MakCoder-2004/maks-agentic-workflow/zip/refs/heads/main')
-        self.assertFalse(any(key.lower() == 'authorization' for key in request.headers))
-        self.assertEqual(open_url.call_args.kwargs['timeout'], 180)
-        self.assertTrue(response.closed)
-        with patch.object(bootstrap, 'MAX_ARCHIVE_BYTES', 2), patch.object(bootstrap, 'urlopen', return_value=io.BytesIO(data)):
+        self.assertEqual(run.call_args.args[0], ['gh', 'api', 'repos/MakCoder-2004/maks-agentic-workflow/zipball/main'])
+        self.assertTrue(run.call_args.kwargs['capture_output'])
+        self.assertEqual(run.call_args.kwargs['timeout'], 180)
+        with patch.object(bootstrap.shutil, 'which', return_value='gh'), patch.object(bootstrap.subprocess, 'run', return_value=subprocess.CompletedProcess(['gh'], 0, data, b'')), patch.object(bootstrap, 'MAX_ARCHIVE_BYTES', 2):
             with self.assertRaisesRegex(bootstrap.BootstrapError, 'size limit'):
                 bootstrap.download_source()
+
+    def test_private_repository_requires_authenticated_github_cli(self):
+        with patch.object(bootstrap.shutil, 'which', return_value=None), patch.object(bootstrap.subprocess, 'run') as run:
+            with self.assertRaisesRegex(bootstrap.BootstrapError, 'private.*gh auth login'):
+                bootstrap.download_source()
+        run.assert_not_called()
 
     def test_download_failure_never_invokes_the_curated_installer(self):
         error = io.StringIO()
