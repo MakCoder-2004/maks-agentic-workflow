@@ -1,22 +1,22 @@
 # Install only the combined workflow
 
-Requires Python 3.10+, GitHub CLI, and access to this private repository. A permanent clone and package manager are not required.
+Requires Python 3.10+ and network access. No GitHub CLI, login, permanent clone, or package manager is required.
 
 ## Install directly from GitHub
 
-Run `gh auth login` once, then run this **inside your target project**:
+Run this **inside your target project**:
 
 ```bash
-python -c "import base64,subprocess; exec(compile(base64.b64decode(subprocess.check_output(['gh','api','repos/MakCoder-2004/maks-agentic-workflow/contents/install.py','--jq','.content'])),'<github-install>','exec'))" --project . --host pi
+python -c "import sys,urllib.request; code=urllib.request.urlopen('https://raw.githubusercontent.com/MakCoder-2004/maks-agentic-workflow/main/install.py').read(); exec(code or sys.exit('Download failed'))" --project . --host pi
 ```
 
-This command is cross-platform when Python and GitHub CLI are available. Only you and invited collaborators can access the private installer. The bootstrap downloads the private source archive through authenticated GitHub CLI, validates it, installs the selected skills, and removes temporary files. The installer runs in the original working directory, so `--project .` means your project.
+The bootstrap downloads the public source archive, validates it, installs the selected skills, and removes temporary files. Review remote code before executing it. The installer runs in the original working directory, so `--project .` means your project.
 
 Use `--project "/path/to/your-project"` to target another directory, and choose `pi`, `codex`, `cursor` or `claude-code`. All existing flags are forwarded: add `--dry-run`, `--list` or `--check` to the same GitHub command.
 
-The [bootstrap](../../install.py) downloads the current main source ZIP into a temporary directory through authenticated GitHub CLI access, validates the archive, and invokes the curated installer while preserving your original working directory. It removes temporary source afterward. Downloading source for selection does **not** install the three full catalogs or expose the temporary archive's skills to your project's discovery. Only the selected 21 original entries, the combined setup coordinator and their private helper/reference closure reach your project. A failed download or invalid archive does not invoke the project installer.
+The [bootstrap](../../install.py) downloads the current main source ZIP into a temporary directory without credentials, validates the archive, and invokes the curated installer while preserving your original working directory. It removes temporary source afterward. Downloading source for selection does **not** install the three full catalogs or expose the temporary archive's skills to your project's discovery. Only the selected 21 original entries, the combined setup coordinator and their private helper/reference closure reach your project. A failed download or invalid archive does not invoke the project installer.
 
-The command executes code from this private repository's current `main`; review the source before running and use normal user rights. GitHub CLI authentication and network access are required. The underlying curated installer itself remains offline. There is no claim that `npx skills add` will execute this custom selection.
+The command executes code from this public repository's current `main`; review the source before running and use normal user rights. Network access is required. The underlying curated installer itself remains offline. There is no claim that `npx skills add` will execute this custom selection.
 
 ## Optional local-checkout command
 
