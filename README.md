@@ -2,17 +2,16 @@
 
 A curated set of existing engineering skills with a clear handoff between planning and implementation. Matt Pocock's skills define the work, pstack's `poteto-mode` builds and verifies it, and Addy Osmani's skills provide the relevant quality and release checks. You don't have to install all three catalogs or run three competing workflows.
 
-**This repository is private.** You need access to clone it, install the workflow, or open an issue or pull request.
+The repository is public. Anyone can read it, open an issue, or submit a pull request; only the owner can merge to `main`.
 
 ## Get started
 
-You need Python 3.10+. For the private GitHub install command, you also need [GitHub CLI](https://cli.github.com/) authenticated with access to this repository.
+You need Python 3.10+ and network access. No GitHub login or GitHub CLI is required.
 
 1. From your **target project's directory**, install the skills. Change `pi` to `codex`, `cursor`, or `claude-code` as needed:
 
    ```bash
-   gh auth login
-   python -c "import base64,subprocess; exec(compile(base64.b64decode(subprocess.check_output(['gh','api','repos/MakCoder-2004/maks-agentic-workflow/contents/install.py','--jq','.content'])),'<github-install>','exec'))" --project . --host pi
+   python -c "import sys,urllib.request; code=urllib.request.urlopen('https://raw.githubusercontent.com/MakCoder-2004/maks-agentic-workflow/main/install.py').read(); exec(code or sys.exit('Download failed'))" --project . --host pi
    ```
 
    Already have a checkout? From this repository, run `python scripts/install.py --project /path/to/your-project --host pi` instead. Add `--dry-run` to preview changes. The installer preserves existing project instructions and refuses to overwrite modified skills.
@@ -82,7 +81,7 @@ Approve the spec and ticket plan before production implementation. Publishing is
 
 ## Contribute and learn more
 
-The repository is private. Invited collaborators can open issues and submit PRs. The owner reviews and merges changes to `main`. Merge commits and rebase merges preserve contributors' individual commits; squash merges are disabled. See [CONTRIBUTING.md](CONTRIBUTING.md).
+The repository is public. Anyone can open issues or submit PRs. The owner reviews and merges changes to `main`. Merge commits and rebase merges preserve contributors' individual commits; squash merges are disabled. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - [Full workflow](docs/guide/README.md) and [scenario recipes](docs/guide/scenarios.md)
 - [Install and upgrade details](docs/guide/install.md)

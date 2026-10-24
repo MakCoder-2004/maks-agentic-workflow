@@ -1,14 +1,14 @@
 # Contribute to Maks Agentic Workflow
 
-The repository is private. Issues and pull requests are available only to you and collaborators you invite. Only the repository owner merges changes to `main`.
+The repository is public. Anyone can open an issue or submit a pull request. Only the repository owner merges changes to `main`.
 
 ## Report a problem or propose an idea
 
-Open an issue with the affected workflow, host, expected behavior, and relevant output. Only the owner and invited collaborators can view or submit issues while the repository is private. Do not include credentials, private prompts, customer data, or unredacted session logs.
+Open an issue with the affected workflow, host, expected behavior, and relevant output. Do not include credentials, private prompts, customer data, or unredacted session logs.
 
 ## Submit a change
 
-1. Ask the owner for repository access, then create a focused branch or fork. Public contributors cannot view or fork this private repository.
+1. Fork the repository and create a focused branch.
 2. Make a small change. Preserve original upstream skill content and licenses unless the change explicitly updates a pinned source version.
 3. Run the relevant checks:
 

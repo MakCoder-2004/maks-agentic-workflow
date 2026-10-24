@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Private GitHub entry point: authenticated temporary download, install, cleanup.
+"""Public GitHub entry point: temporary download, curated install, cleanup.
 
-Requires Python 3.10+ and GitHub CLI access to this private repository. It does
-not require a permanent clone. All installer arguments and caller-relative
-project paths are preserved; temporary source is removed after installation.
+Requires Python 3.10+; no Git, GitHub CLI, login, or permanent clone.
+Installer arguments and caller-relative project paths are preserved.
 """
 from __future__ import annotations
 
@@ -14,10 +13,12 @@ import stat
 import subprocess
 import sys
 import tempfile
+from urllib.request import Request, urlopen
 import zipfile
 
 REPOSITORY = 'MakCoder-2004/maks-agentic-workflow'
 REF = 'main'
+SOURCE_URL = f'https://codeload.github.com/{REPOSITORY}/zip/refs/heads/{REF}'
 MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
 MAX_EXTRACTED_BYTES = 256 * 1024 * 1024
 MAX_MEMBERS = 10000
@@ -74,21 +75,12 @@ def extract_source(data: bytes, destination: Path) -> Path:
 
 
 def download_source() -> bytes:
-    gh = shutil.which('gh')
-    if not gh:
-        raise BootstrapError('This repository is private. Install GitHub CLI, run gh auth login, and confirm repository access.')
-    try:
-        result = subprocess.run([gh, 'api', f'repos/{REPOSITORY}/zipball/{REF}'],
-                                capture_output=True, timeout=180)
-    except subprocess.TimeoutExpired as error:
-        raise BootstrapError('Timed out downloading the private GitHub installer source.') from error
-    if result.returncode:
-        detail = result.stderr.decode('utf-8', errors='replace').strip()
-        raise BootstrapError('Cannot download the private source. Check gh auth status and repository access.'
-                             + ('\\n' + detail if detail else ''))
-    if len(result.stdout) > MAX_ARCHIVE_BYTES:
+    request = Request(SOURCE_URL, headers={'User-Agent': 'maks-agentic-workflow-installer'})
+    with urlopen(request, timeout=180) as response:
+        data = response.read(MAX_ARCHIVE_BYTES + 1)
+    if len(data) > MAX_ARCHIVE_BYTES:
         raise BootstrapError('The downloaded source archive exceeds the size limit.')
-    return result.stdout
+    return data
 
 
 def main(argv: list[str] | None = None) -> int:
